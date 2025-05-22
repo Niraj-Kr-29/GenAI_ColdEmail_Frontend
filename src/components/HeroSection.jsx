@@ -38,19 +38,19 @@ export default HeroSection;
 const words = [
   {
     text: "STREAMLINE",
-    className: "font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold text-7xl",
   },
   {
     text: "YOUR",
-    className: "font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold text-7xl",
   },
   {
     text: "WORKFLOW",
-    className: "font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold text-7xl",
   },
   {
     text: "WITH ",
-    className: "font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold text-7xl",
   },
   {
     text: "SENDSMART",
