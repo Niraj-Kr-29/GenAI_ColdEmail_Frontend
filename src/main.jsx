@@ -5,6 +5,10 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Pages/Home.jsx'
 import PrimaryPage from './Pages/PrimaryPage.jsx'
+import { Provider } from 'react-redux'
+import store from './store/store.js'
+import ProfileCompletePage from './Pages/ProfileCompletePage.jsx'
+
 
 const router = createBrowserRouter([{
   path : '/',
@@ -17,10 +21,16 @@ const router = createBrowserRouter([{
     {
       path : '/primary',
       element : <PrimaryPage />
-    }
+    },
+    {
+      path : '/profileCompletePage',
+      element : <ProfileCompletePage />
+    },
   ]
 }])
 
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <Provider store={store}> 
+    <RouterProvider router={router} />
+  </Provider>
 )

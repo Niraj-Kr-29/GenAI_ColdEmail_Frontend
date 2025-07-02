@@ -3,8 +3,34 @@ import './App.css'
 import HeroSection from './components/HeroSection'
 import Home from './Pages/Home'
 import Footer from './components/Footer'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import axios from 'axios'
+import {storeLogin,storeLogout} from './store/authSlice'
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+     const response = fetch("http://localhost:3000/user/getUserDetails",{
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      }
+     })
+     .then(async(response)=>{
+      const data = await response.json()
+      if(response.status == 200){
+        console.log(data)
+        dispatch(storeLogin(data))
+      }
+      else{
+        dispatch(storeLogout())
+      }
+     })
+  },[dispatch])
 
   return (
     <>

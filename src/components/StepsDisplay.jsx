@@ -4,6 +4,7 @@ import createAccount from "../assets/createAccount.gif";
 import jobDescription from "../assets/jobDescription.gif";
 import generateEmail from "../assets/generateEmail.gif";
 import sendEmail from "../assets/sendEmail.gif";
+import roboAnimation from "../assets/roboAnimation.gif";
 
 const StepsDisplay = () => {
   const steps = [
@@ -26,10 +27,10 @@ const StepsDisplay = () => {
 ];
 
   return (
-    <div className="top-0 left-0 z-[-2] h-[38rem] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] flex justify-center mb-6">
+    <div className="top-0 left-0 z-[-2] h-[38rem] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] flex justify-center mb-20">
       <div className="flex w-full px-14">
         <div className="w-1/3">
-          <img className="w-full ml-9 mt-12" src={robotImage} alt="" />
+          <img className="w-full ml-5 mt-12" src={roboAnimation} alt="" />
         </div>
         <div className="w-2/3 text-zinc-200 pl-4">
            <div className="w-5/6 bg-slate-700 h-1/5 rounded-full justify-center text-start flex flex-col mb-7 pl-10 hover:scale-105 hover:bg-slate-600 transition-all">
