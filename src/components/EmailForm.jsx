@@ -1,8 +1,18 @@
-import React, { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
+import { useDispatch, useSelector } from "react-redux";
+import { FaRegEdit, FaReply } from "react-icons/fa"
+import { useNavigate } from "react-router-dom";
+import { storeLogout } from "../store/authSlice";
+import { toast } from "react-toastify";
 
 const EmailForm = () => {
+  const user = useSelector((state) => state.auth.userData);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const generateEmail = async () => {
     const to = getValues("to");
     const description = getValues("description");
@@ -47,20 +57,56 @@ const EmailForm = () => {
         body: data.emailBody,
       }),
     })
-      .then((response) => {
-        response.json();
-        if (response.status == "success") {
-          alert("Email sent successfully!");
-        }
-      })
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+
+    const result = await response.json()
+    if(result.status == "success"){
+      console.log(result)
+      toast.success("Email send successfully !")
+    }
+    else{
+      console.log(result)
+      toast.error("Error while sending the email")
+    }
   };
+
+  const logout = async()=>{
+    const response = await fetch("http://localhost:3000/auth/logout",{
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response)=>{
+      if(response.status == 200){
+        dispatch(storeLogout())
+        navigate("/")
+      }
+    })
+    .catch((error)=>{
+      console.error(error)
+    })
+  }
 
   const { register, handleSubmit, control, getValues, setValue } = useForm();
   return (
-    <div className="flex w-screen">
-      <div className="w-1/4 bg-slate-900"></div>
+    <div className="flex w-screen font-lansui">
+      <div className="w-1/4 bg-slate-900 p-4">
+        <div
+          className="flex h-16 w-full items-center justify-center bg-purple-600 rounded-full relative z-50 cursor-pointer"
+        >
+          <img
+            src={user.profilePicture}
+            className="w-10 rounded-full mr-4 border-white border-2"
+            alt=""
+            onClick={() => setMenuOpen(!menuOpen)}
+          />
+          <div className="text-xl font-bold text-white">
+            Hi {user.name || "User"}👋 !
+          </div>
+        </div>
+        {menuOpen && <div className="w-full h-24 flex flex-col justify-center items-center mt-5 bg-indigo-950 rounded-xl text-slate-50 text-xl gap-2"><button className="flex gap-3 hover:scale-110 hover:text-purple-600 transition-all" onClick={logout}>Logout <FaReply className="mt-1"/></button><button className="flex gap-3 hover:scale-110 hover:text-purple-600 transition-all" onClick={()=>navigate("/profileCompletePage")}>Edit Profile <FaRegEdit className="mt-1"/></button></div>}
+      </div>
       <div className="w-full p-5">
         <div className="text-4xl font-bold text-white w-2/3 text-center mt-4 mb-6">
           START SENDING EMAILS !

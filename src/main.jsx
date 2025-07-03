@@ -8,6 +8,7 @@ import PrimaryPage from './Pages/PrimaryPage.jsx'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 import ProfileCompletePage from './Pages/ProfileCompletePage.jsx'
+import { AuthLayout } from './components/AuthLayout.jsx'
 
 
 const router = createBrowserRouter([{
@@ -20,11 +21,15 @@ const router = createBrowserRouter([{
     },
     {
       path : '/primary',
-      element : <PrimaryPage />
+      element : <AuthLayout requiredAuthentication={true}>
+        <PrimaryPage />
+      </AuthLayout>
     },
     {
       path : '/profileCompletePage',
-      element : <ProfileCompletePage />
+      element : <AuthLayout requiredAuthentication={true}>
+        <ProfileCompletePage />
+      </AuthLayout>
     },
   ]
 }])

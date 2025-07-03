@@ -7,13 +7,15 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import {storeLogin,storeLogout} from './store/authSlice'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
 
   const dispatch = useDispatch()
 
   useEffect(()=>{
-     const response = fetch("http://localhost:3000/user/getUserDetails",{
+    const fetchUser = async() =>{
+      const response = await fetch("http://localhost:3000/user/getUserDetails",{
       method: "GET",
       credentials: "include",
       headers: {
@@ -25,25 +27,37 @@ function App() {
       if(response.status == 200){
         console.log(data)
         dispatch(storeLogin(data))
+        dispatch()
       }
       else{
         dispatch(storeLogout())
       }
      })
+    }
+
+    fetchUser()
   },[dispatch])
 
   return (
     <>
-       <div className="absolute top-0 left-0 z-[-2] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
-        <div>
-          <main>
-            <Outlet />
-          </main>
-          <Footer />
-        </div>
-       </div>
+      <div className="fixed inset-0 -z-10 w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+      <div className="relative z-50 min-h-screen flex flex-col">
+        <main className="flex-grow w-full">
+          <Outlet />
+        </main>
+        <Footer />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnHover
+          draggable
+        />
+      </div>
     </>
-  )
+  );
 }
 
 export default App
