@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import {storeLogin,storeLogout} from './store/authSlice'
 import { ToastContainer } from 'react-toastify'
+import Navbar from './components/Navbar'
+
 
 function App() {
 
@@ -15,7 +17,7 @@ function App() {
 
   useEffect(()=>{
     const fetchUser = async() =>{
-      const response = await fetch("http://localhost:3000/user/getUserDetails",{
+      const response = await fetch("https://genai-coldemail.onrender.com/user/getUserDetails",{
       method: "GET",
       credentials: "include",
       headers: {
@@ -42,6 +44,7 @@ function App() {
     <>
       <div className="fixed inset-0 -z-10 w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
       <div className="relative z-50 min-h-screen flex flex-col">
+        <Navbar />
         <main className="flex-grow w-full">
           <Outlet />
         </main>
