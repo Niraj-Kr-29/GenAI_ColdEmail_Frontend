@@ -12,7 +12,7 @@ const HeroSection = () => {
   const navigate = useNavigate()
 
   const login = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = 'https://genai-coldemail.onrender.com/auth/google';
   }
 
   const movePrimary = ()=>{
