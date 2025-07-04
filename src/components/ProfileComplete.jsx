@@ -6,6 +6,7 @@ import profileSectionImage from "../assets/profileSectionImage.png";
 import { storeLogin } from "../store/authSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ProfileComplete = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const ProfileComplete = () => {
       console.log("Cleaned Skills Array :", skills)
       data.skills = skills
 
-      const response = await fetch("http://localhost:3000/user/update_profile", {
+      const response = await fetch("https://genai-coldemail.onrender.com/user/update_profile", {
           method: "PATCH",
           credentials: "include",
           headers: {
@@ -61,6 +62,7 @@ const ProfileComplete = () => {
       .then(async(response) => {
         const data = await response.json()
         if(response.status == 200){
+          toast.success("Userdata updated successfully ! 👤")
           console.log(data.user)
           dispatch(storeLogin(data.user))
           navigate('/primary')

@@ -18,7 +18,7 @@ const EmailForm = () => {
     const description = getValues("description");
     setValue("subject", "Generating subject...");
     setValue("emailBody", "Generating Email Body...");
-    const geminiResponse = await fetch("http://localhost:3000/email/generate", {
+    const geminiResponse = await fetch("https://genai-coldemail.onrender.com/email/generate", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -45,7 +45,7 @@ const EmailForm = () => {
   // },[geminiResponse])
 
   const submit = async (data) => {
-    const response = await fetch("http://localhost:3000/email/send", {
+    const response = await fetch("https://genai-coldemail.onrender.com/email/send", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -70,7 +70,7 @@ const EmailForm = () => {
   };
 
   const logout = async()=>{
-    const response = await fetch("http://localhost:3000/auth/logout",{
+    const response = await fetch("https://genai-coldemail.onrender.com/auth/logout",{
       method: "GET",
       credentials: "include",
       headers: {

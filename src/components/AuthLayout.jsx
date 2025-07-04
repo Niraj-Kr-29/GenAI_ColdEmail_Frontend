@@ -11,7 +11,7 @@ export const AuthLayout = ({children, requiredAuthentication})=>{
    useEffect(()=>{
     if(authStatus === null) return;
      if(authStatus == false && requiredAuthentication == true){
-        window.location.href = 'http://localhost:3000/auth/google'
+        window.location.href = 'https://genai-coldemail.onrender.com/auth/google'
         return
      }
      setLoader(false)
