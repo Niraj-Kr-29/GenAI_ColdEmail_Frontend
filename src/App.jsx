@@ -35,6 +35,9 @@ function App() {
         dispatch(storeLogout())
       }
      })
+     .catch((error)=>{
+      console.error(error)
+     })
     }
 
     fetchUser()
