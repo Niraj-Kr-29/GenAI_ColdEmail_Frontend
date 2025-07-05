@@ -29,7 +29,6 @@ function App() {
       if(response.status == 200){
         console.log(data)
         dispatch(storeLogin(data))
-        dispatch()
       }
       else{
         dispatch(storeLogout())
