@@ -73,7 +73,7 @@ const ProfileComplete = () => {
 
   return (
     <>
-      <div className="w-screen sm:h-[150vh] h-[140vh] bg-slate-900 px-44 py-16">
+      <div className="w-screen sm:h-[150vh] h-[140vh] bg-slate-900 sm:px-44 sm:py-16">
         <div className="sm:text-5xl text-3xl sm:p-0 p-6 font-bold bg-slate-900 text-slate-100 sm:mb-10">
           COMPLETE YOUR PROFILE
         </div>
