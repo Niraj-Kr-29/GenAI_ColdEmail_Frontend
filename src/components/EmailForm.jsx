@@ -142,13 +142,12 @@ const EmailForm = () => {
               <textarea
                 {...register("emailBody")}
                 placeholder="Email Body"
-                onChange={(e) => setValue(e.target.value)}
+                onChange={(e) => setValue("emailBody",e.target.value)}
                 className="w-full h-64 p-4 text-black bg-white rounded-md resize-none 
                         whitespace-pre-wrap overflow-y-auto overflow-x-hidden"
               />
               <button
                 type="submit"
-                onClick={handleSubmit(submit)}
                 className="w-full bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-900"
               >
                 Send
