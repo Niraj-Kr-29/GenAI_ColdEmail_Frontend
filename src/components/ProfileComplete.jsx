@@ -73,12 +73,12 @@ const ProfileComplete = () => {
 
   return (
     <>
-      <div className="w-screen sm:h-[150vh] h-[140vh] bg-slate-900 sm:px-44 sm:py-16">
+      <div className="w-screen lg:h-[150vh] h-[140vh] bg-slate-900 lg:px-44 lg:py-16 sm:px-10">
         <div className="sm:text-5xl text-3xl sm:p-0 p-6 font-bold bg-slate-900 text-slate-100 sm:mb-10">
           COMPLETE YOUR PROFILE
         </div>
-        <div className="w-full sm:h-full h-[90vh] sm:flex">
-          <div className="sm:w-2/3 h-full">
+        <div className="w-full lg:h-full h-[90vh] lg:flex">
+          <div className="lg:w-2/3 h-full">
             <div className="w-full h-fit bg-violet-900 bg-opacity-50 rounded-3xl shadow-violet-700 shadow-xl py-10">
               <form>
                 <div className="sm:px-20 px-6">
@@ -142,14 +142,14 @@ const ProfileComplete = () => {
             </div>
           </div>
 
-          <div className="sm:w-1/3 sm:h-full h-[40vh] p-6">
-            <div className="bg-violet-900 w-full sm:h-1/3 h-full sm:mx-8 sm:mt-9 rounded-3xl">
+          <div className="lg:w-1/3 lg:h-full h-[40vh] p-6">
+            <div className="bg-violet-900 w-full lg:h-1/3 h-full lg:mx-8 sm:mt-9 rounded-3xl">
               <p className="text-lg font-bold font-lansui px-8 pt-8 text-yellow-500 uppercase">"Fill it once. Nail every email."</p>
               <p className="text-base font-bold font-lansui px-8 pt-6 text-slate-100">
                 Your one-time profile setup powers every cold email you’ll ever send. Our AI takes your details — skills, experience, resume — and crafts personalized emails tailored to each job description. No repeats, no rewrites — just smart, effective outreach on autopilot.
               </p>
             </div>
-            <div className="hidden sm:inline">
+            <div className="hidden lg:inline">
               <img src={profileSectionImage} className="w-full mx-8 mt-8 rounded-3xl" alt="" />
             </div>
           </div>
