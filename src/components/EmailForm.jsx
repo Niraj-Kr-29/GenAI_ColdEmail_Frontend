@@ -90,8 +90,8 @@ const EmailForm = () => {
 
   const { register, handleSubmit, control, getValues, setValue } = useForm();
   return (
-    <div className="flex w-screen font-lansui">
-      <div className="w-1/4 bg-slate-900 p-4">
+    <div className="sm:flex w-screen font-lansui">
+      <div className="sm:w-1/4 w-full bg-slate-900 p-4">
         <div
           className="flex h-16 w-full items-center justify-center bg-purple-600 rounded-full relative z-50 cursor-pointer"
         >
@@ -108,11 +108,11 @@ const EmailForm = () => {
         {menuOpen && <div className="w-full h-24 flex flex-col justify-center items-center mt-5 bg-indigo-950 rounded-xl text-slate-50 text-xl gap-2"><button className="flex gap-3 hover:scale-110 hover:text-purple-600 transition-all" onClick={logout}>Logout <FaReply className="mt-1"/></button><button className="flex gap-3 hover:scale-110 hover:text-purple-600 transition-all" onClick={()=>navigate("/profileCompletePage")}>Edit Profile <FaRegEdit className="mt-1"/></button></div>}
       </div>
       <div className="w-full p-5">
-        <div className="text-4xl font-bold text-white w-2/3 text-center mt-4 mb-6">
+        <div className="text-4xl font-bold text-white sm:w-2/3 text-center mt-4 mb-6">
           START SENDING EMAILS !
         </div>
 
-        <div className="w-2/3 bg-slate-900 flex justify-center align-middle p-3 rounded-xl">
+        <div className="sm:w-2/3 bg-slate-900 flex justify-center align-middle p-3 rounded-xl">
           <form onSubmit={handleSubmit(submit)} className="flex w-11/12">
             <div className="w-full px-2 pb-4">
               <Input
