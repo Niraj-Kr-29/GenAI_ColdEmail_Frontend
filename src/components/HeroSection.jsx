@@ -21,8 +21,8 @@ const HeroSection = () => {
 
   return (
     <div className="w-full h-full left-0 top-0">
-      <div className="w-screen h-screen flex flex-col justify-center items-center text-white px-32">
-        <div className="text-3xl mb-5">MAKE YOUR JOB HUNTING EASIER !!!</div>
+      <div className="w-screen h-screen flex flex-col justify-center items-center text-white px-4 sm:px-32">
+        <div className="sm:text-3xl text-xl mb-5">MAKE YOUR JOB HUNTING EASIER !!!</div>
         <div>
           <TypewriterEffect words={words} />
         </div>
@@ -48,26 +48,26 @@ export default HeroSection;
 const words = [
   {
     text: "STREAMLINE",
-    className: "dark:text-zinc-200 font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold   sm:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "YOUR",
-    className: "dark:text-zinc-200 font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold sm:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "WORKFLOW",
-    className: "dark:text-zinc-200 font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold sm:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "WITH ",
-    className: "dark:text-zinc-200 font-extrabold text-7xl",
+    className: "dark:text-zinc-200 font-extrabold sm:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "SENDSMART",
-    className: "dark:text-violet-500 font-extrabold text-7xl",
+    className: "dark:text-violet-500 font-extrabold sm:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "AI.",
-    className: "font-extrabold text-7xl",
+    className: "font-extrabold sm:text-7xl md:text-5xl text-3xl",
   },
 ];

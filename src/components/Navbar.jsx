@@ -12,7 +12,7 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex space-x-6 items-center">
+          <div className="flex space-x-6 items-center">
             <Link
               to="/"
               className="text-white hover:text-yellow-500 hover:scale-110 transition duration-200"

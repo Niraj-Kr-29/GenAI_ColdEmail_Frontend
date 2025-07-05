@@ -1,6 +1,7 @@
 import React from "react";
 import FeatureCard from "./FeatureCard.jsx";
 import featureIcon from "../assets/featureIcon.gif";
+import { div } from "motion/react-client";
 
 const KeyFeatures = () => {
  const keyFeatures = [
@@ -25,15 +26,15 @@ const KeyFeatures = () => {
 
   return (
     <div className="top-0 left-0 z-[-2] h-[45rem] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] flex justify-center">
-      <div className="w-[90%] h-[80%] bg-slate-900 rounded-3xl px-10">
+      <div className="w-[90%] h-[80%] bg-slate-900 rounded-3xl px-10 ">
         <div className="text-white text-4xl font-semibold py-8 font-lansui flex justify-center gap-4">
           Key Features
           <img className="w-12" src={featureIcon} />
         </div>
-        <div className="flex gap-14">
+        <div className="flex gap-14 overflow-x-auto h-[22rem] w-full">
           {
             keyFeatures.map((feature,index)=>{
-              return <FeatureCard key={index} title={feature.title} description={feature.description}/>
+              return <div className="min-w-72 "><FeatureCard key={index} title={feature.title} description={feature.description}/></div>
             })
           }
         </div>
