@@ -73,15 +73,15 @@ const ProfileComplete = () => {
 
   return (
     <>
-      <div className="w-screen h-[150vh] bg-slate-900 px-44 py-16">
-        <div className="text-5xl font-bold bg-slate-900 text-slate-100 mb-10">
+      <div className="w-screen sm:h-[150vh] h-[140vh] bg-slate-900 px-44 py-16">
+        <div className="sm:text-5xl text-3xl sm:p-0 p-6 font-bold bg-slate-900 text-slate-100 sm:mb-10">
           COMPLETE YOUR PROFILE
         </div>
-        <div className="w-full h-full flex">
-          <div className="w-2/3 h-full">
+        <div className="w-full sm:h-full h-[90vh] sm:flex">
+          <div className="sm:w-2/3 h-full">
             <div className="w-full h-fit bg-violet-900 bg-opacity-50 rounded-3xl shadow-violet-700 shadow-xl py-10">
               <form>
-                <div className="px-20">
+                <div className="sm:px-20 px-6">
                   <Input
                     label="Full Name"
                     placeholder="Full Name"
@@ -142,14 +142,14 @@ const ProfileComplete = () => {
             </div>
           </div>
 
-          <div className="w-1/3 h-full">
-            <div className="bg-violet-900 w-full h-1/3 mx-8 mt-9 rounded-3xl">
+          <div className="sm:w-1/3 sm:h-full h-[40vh] p-6">
+            <div className="bg-violet-900 w-full sm:h-1/3 h-full sm:mx-8 sm:mt-9 rounded-3xl">
               <p className="text-lg font-bold font-lansui px-8 pt-8 text-yellow-500 uppercase">"Fill it once. Nail every email."</p>
               <p className="text-base font-bold font-lansui px-8 pt-6 text-slate-100">
                 Your one-time profile setup powers every cold email you’ll ever send. Our AI takes your details — skills, experience, resume — and crafts personalized emails tailored to each job description. No repeats, no rewrites — just smart, effective outreach on autopilot.
               </p>
             </div>
-            <div>
+            <div className="hidden sm:inline">
               <img src={profileSectionImage} className="w-full mx-8 mt-8 rounded-3xl" alt="" />
             </div>
           </div>
