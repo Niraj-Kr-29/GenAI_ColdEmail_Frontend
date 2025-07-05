@@ -128,6 +128,7 @@ const EmailForm = () => {
                 {...register("description", { required: true })}
               />
               <button
+                type="button"
                 onClick={generateEmail}
                 className="w-full bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-900"
               >
