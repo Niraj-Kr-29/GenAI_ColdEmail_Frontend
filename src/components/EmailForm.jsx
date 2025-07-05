@@ -29,12 +29,12 @@ const EmailForm = () => {
         description: description,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        setValue("subject", data.subject);
-        setValue("emailBody", data.body);
-      })
-      .catch((error) => console.error(error));
+
+    const result = await geminiResponse.json()
+    if(result){
+      setValue("subject", result.subject);
+      setValue("emailBody", result.body);
+    }
   };
 
   // useEffect(()=>{
