@@ -31,10 +31,10 @@ const KeyFeatures = () => {
           Key Features
           <img className="w-12" src={featureIcon} />
         </div>
-        <div className="flex gap-14 overflow-x-auto overflow-visible h-[26rem] w-full lg:justify-between">
+        <div className="flex gap-14 overflow-x-auto overflow-visible h-[26rem] w-full">
           {
             keyFeatures.map((feature,index)=>{
-              return <div className="lg:w-60 h-[20rem] mt-6"><FeatureCard key={index} title={feature.title} description={feature.description}/></div>
+              return <div className="sm:min-w-72 h-[20rem] mt-6"><FeatureCard key={index} title={feature.title} description={feature.description}/></div>
             })
           }
         </div>
