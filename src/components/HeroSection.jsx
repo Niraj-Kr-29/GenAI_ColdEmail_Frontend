@@ -48,26 +48,26 @@ export default HeroSection;
 const words = [
   {
     text: "STREAMLINE",
-    className: "dark:text-zinc-200 font-extrabold   sm:text-7xl md:text-5xl text-3xl",
+    className: "dark:text-zinc-200 font-extrabold   lg:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "YOUR",
-    className: "dark:text-zinc-200 font-extrabold sm:text-7xl md:text-5xl text-3xl",
+    className: "dark:text-zinc-200 font-extrabold lg:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "WORKFLOW",
-    className: "dark:text-zinc-200 font-extrabold sm:text-7xl md:text-5xl text-3xl",
+    className: "dark:text-zinc-200 font-extrabold lg:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "WITH ",
-    className: "dark:text-zinc-200 font-extrabold sm:text-7xl md:text-5xl text-3xl",
+    className: "dark:text-zinc-200 font-extrabold lg:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "SENDSMART",
-    className: "dark:text-violet-500 font-extrabold sm:text-7xl md:text-5xl text-3xl",
+    className: "dark:text-violet-500 font-extrabold lg:text-7xl md:text-5xl text-3xl",
   },
   {
     text: "AI.",
-    className: "font-extrabold sm:text-7xl md:text-5xl text-3xl",
+    className: "font-extrabold lg:text-7xl md:text-5xl text-3xl",
   },
 ];
